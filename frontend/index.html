@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mi App Fullstack</title>
+</head>
+<body>
+  <h1>Frontend funcionando</h1>
+  <button onclick="fetchBackend()">Probar backend</button>
+  <p id="respuesta"></p>
+
+  <script>
+    async function fetchBackend() {
+      const res = await fetch("http://192.168.122.131:5000/");
+      const data = await res.json();
+      document.getElementById("respuesta").textContent = data.mensaje;
+    }
+  </script>
+</body>
+</html>
